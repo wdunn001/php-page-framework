@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>readme for future me</title>
+</head>
+
+<body>
+<p><br />
+  potential future developer firstly I am sorry this is convoluded I know.<br />
+  Secondly its not as crazy as it looks even for a simple page</p>
+<p>some notes:<br />
+  the page relies on a url rewrite in the web.config to redirect links.<br />
+  and .php file can be called with a link with just the filename and not the extension it will automaticly insert the page title (exchanging _ for spaces and add .php when looking for the file. </p>
+<p>This site is the equivalent to the asp.net site master system and works in the same general way.</p>
+<p>whats actually happening is the index.php is always being called and the accompanied php files are loaded into a get so like home is actually index.php?page=home.php when inserted into a link. </p>
+<p>SUPER IMPORTANT:<br />
+  external links have to be fully fleshed so like www.contosco.com isnt going to cut it its gotta be http://www.contosco.com/ or the rewrite might try to load it in a variable. for local resources this isnt an issue as long as they are in a tag. I.E. img src=blah/blah/foo.jpg</p>
+<p>the index sets variables and fixes the title and includes the master the site master includes a header and a footer and menu plus whatever page is called</p>
+<p>so it works like this </p>
+<p>Index.php<br />
+  |<br />
+  |<br />
+  | 			   Header<br />
+  |        		 |<br />
+  |   			 |<br />
+  master ----Menu----Page<br />
+  |<br />
+  |<br />
+  Footer<br />
+  so any php file you create in the root will automaticly have all these elements</p>
+<p>the header contains all the java and css includes</p>
+</body>
+</html>
